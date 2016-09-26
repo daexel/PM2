@@ -39,7 +39,7 @@ public class Student implements Comparable<Student>, Comparator<Student> {
  */
 	public String toString() {
 		return "Vorname: " + vorname + "\n" + "Nachname: " + nachname + "\n" + "Matrikelnummer: " + matrikelnummer
-				+ "\n" + "Pruefungsleistungen: "+"\n"+"Modul: "+ListePruefungsleistungen.;
+				+ "\n" + "Pruefungsleistungen: "+"\n"+"Modul: ";
 	}
 
 	public int getMatrikelnummer() {
@@ -82,13 +82,17 @@ public class Student implements Comparable<Student>, Comparator<Student> {
 
 	@Override
 	public int compare(Student student, Student andererStudent) {
-		if (student.getVorname() < andererStudent.getVorname()) {
-
+		
+		if (student.getVorname() == null && andererStudent.getVorname()==null){
+			return 0;
 		}
-		// if ((student.getVorname() == andererStudent.getVorname())
-		// & (student.getNachname() == andererStudent.getNachname())) {
+		if (student.getVorname()==null){
+			return 1;
+		}
+		if (andererStudent.getVorname()==null){
+			return -1;
+		}
 		return student.compareTo(andererStudent);
-
-	}
-
+		
+}
 }
