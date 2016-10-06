@@ -1,6 +1,7 @@
 package aufgabenblatt1_2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Sensor {
@@ -17,7 +18,24 @@ public class Sensor {
 		
 	}
 	
-	
+	public int getID(){
+		return this.ID;
+	}
+	public int getAnzahlMessungen(){
+		int anzahlMessungen=0;
+		Iterator iter= listeMessungen.iterator();
+		
+		for(int i=0;iter.hasNext();i++)
+		{
+			if (listeMessungen.get(i)!=null)
+			{
+				anzahlMessungen++;
+			}
+			iter.next();
+			
+		}
+		return anzahlMessungen;
+	}
 	
 	
 	
