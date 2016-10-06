@@ -2,7 +2,7 @@
  * PM2 Praktikum Aufgabenblatt 1.1
  * @author Phillip Beck, Michel Gerlach
  */
-package aufgabenblatt1;
+package aufgabenblatt1_1;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -34,12 +34,13 @@ public class Student implements Comparable<Student>, Comparator<Student> {
 			ListePruefungsleistungen.add(pruefungsleistungen[i]);
 		}
 	}
-/**
- * Gibt die Informationen des Studenten als String zurueck.
- */
+
+	/**
+	 * Gibt die Informationen des Studenten als String zurueck.
+	 */
 	public String toString() {
 		return "Vorname: " + vorname + "\n" + "Nachname: " + nachname + "\n" + "Matrikelnummer: " + matrikelnummer
-				+ "\n" + "Pruefungsleistungen: "+"\n"+"Modul: ";
+				+ "\n" + "Pruefungsleistungen: " + "\n" + "Modul: ";
 	}
 
 	public int getMatrikelnummer() {
@@ -82,17 +83,18 @@ public class Student implements Comparable<Student>, Comparator<Student> {
 
 	@Override
 	public int compare(Student student, Student andererStudent) {
-		
-		if (student.getVorname() == null && andererStudent.getVorname()==null){
+
+		if (student.getVorname() == null && andererStudent.getVorname() == null && student.getNachname() == null
+				&& andererStudent.getNachname()==null) {
 			return 0;
 		}
-		if (student.getVorname()==null){
+		if (student.getVorname() == null && student.getNachname() == null) {
 			return 1;
 		}
-		if (andererStudent.getVorname()==null){
+		if (andererStudent.getVorname() == null && andererStudent.getNachname() == null) {
 			return -1;
 		}
 		return student.compareTo(andererStudent);
-		
-}
+
+	}
 }

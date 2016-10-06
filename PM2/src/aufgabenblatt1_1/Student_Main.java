@@ -1,4 +1,4 @@
-package aufgabenblatt1;
+package aufgabenblatt1_1;
 
 public class Student_Main {
 public static void main(String []args){

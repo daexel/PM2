@@ -1,4 +1,4 @@
-package aufgabenblatt1;
+package aufgabenblatt1_1;
 
 public class Pruefungsleistung {
 private String nameModul;
